@@ -1,0 +1,20 @@
+{{extend 'layout.html'}}
+<h1>Hola, <em>{{ = user.username}}</em></h1>
+<h3>Please, click on the name of the set you want me to check:</h3>
+<form method="get" action="scan">
+<select id="selector" name="set_id">
+{{ for s in listaset: }}
+    <option value="{{=s.id}}">{{ =s.title }}</option>
+    {{ pass }}
+</select>
+<input type="hidden" value="" id="setname" />
+<input type="submit" value="Acquire" class="btn-primary btn"/>
+</form>
+<script type="javascript">
+$("#selector").change(function() {
+    var $value = $(this).val();
+    var $title = $(this).children('option[value='+$value+']').text();
+    $('#setname').val($title);
+
+});
+</script>

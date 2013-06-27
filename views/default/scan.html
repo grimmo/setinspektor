@@ -1,0 +1,18 @@
+{{extend 'layout.html'}}
+<h1>Those are the names of the photos in your set</h1>
+<select multiple="multiple" class="span5 input-xlarge uneditable-input">
+{{ for nome in nomi_foto: }}
+    <option>{{ = nome }}</option>    
+{{ pass }}
+</select>
+<h1>Please select the file names to be compared from your computer:</h1>
+<form method="POST" enctype="multipart/form-data">
+<input type="file" name="file_pc" multiple />
+<input type="hidden" name="lista_foto" value="{{ =nomi_foto }}" />
+    <p></p>
+<div class="span6 pagination-centered">
+<input type="submit" value="Compare" class="btn btn-large btn-primary pull-center"/>
+</div>
+</form>
+
+{{ pass }}

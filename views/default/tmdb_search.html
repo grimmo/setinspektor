@@ -1,0 +1,20 @@
+{{extend 'layout.html'}}
+<h1>Inserisci il titolo da cercare</h1>
+{{ = form }}
+
+{{ if risultati: }}
+
+<h2> Film trovati </h2>
+
+<TABLE>
+    <THEAD>
+    <TH>Titolo</TH><TH>Anno di uscita</TH><TH>Titolo originale</TH>
+    </THEAD>
+    <TBODY>
+    {{ for film in risultati: }}    
+        <TR><TD>{{ =A(film['title'],_href=URL('default','tmdb_get_movie',vars=dict(id=film['id']))) }}</TD><TD>{{ = film['release_date'] }}</TD><TD>{{ = film['original_title'] }}</TD></TR>    
+    {{ pass }}
+    </TBODY>
+</TABLE>
+        
+{{ pass }}

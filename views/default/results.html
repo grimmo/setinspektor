@@ -1,0 +1,13 @@
+{{extend 'layout.html'}}
+{{ if type(missing_files) == set: }}
+<h1>These are the file names missing from the set </h1>
+<ul class="unstyled">
+{{ for nome in missing_files: }}
+    <li><span class="badge badge-important"><i class="icon-remove icon-red"></i></span> {{ = nome }}</li>
+{{pass}}
+</ul>
+{{ else: }}
+<h1 class="text-success">Hooray! No pictures missing</h1>
+{{ pass }}
+<h2 class="text-center">That's all folks!</h2>
+<a class="btn btn-primary" href="{{=URL('scelta_set')}}">Examine another set</a>

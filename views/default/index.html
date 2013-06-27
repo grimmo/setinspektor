@@ -1,0 +1,13 @@
+{{extend 'layout.html'}}
+<h1>Welcome!</h1>
+<h4>Did your batch upload get stuck or partially failed?</h2>
+<h4>Do you want to know which photos made it and which did not?</h2>
+<h3 class="muted">This app is for you!</h2>
+<p></p>
+<p class="lead">SetInspektor will compare the names of the pictures you uploaded in a certain set,
+    against those in a folder of your computer and tell you which ones are missing from the set.</p>
+<p>Create a new set on <a href="http://www.flickr.com" target="_new">flickr</a> and add in all the photos you want to check, then click this button to
+    authorize setinspektor to access your flickr account.</p>
+<div class="span6 pagination-centered">
+    <a class="btn btn-large btn-primary pull-center" href="{{=URL('scelta_set')}}">Continue</a>
+</div>
